@@ -1,7 +1,8 @@
 package com.hazel.fiazi.coding;
 
-import java.lang.reflect.Array;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -36,9 +37,9 @@ public class Main {
 
         printValues("\n>>>>>>>>>>>>Bounded Type Parameters<<<<<<<<<<<<<\n");
 
-        NaturalNumber<Integer> naturalNumber = new NaturalNumber<>(23);
-        boolean isNatural = naturalNumber.isEven();
-        printValues(String.format("Check Number isNatural: %s", isNatural));
+        NaturalNumber<Integer> naturalNumber = new NaturalNumber<>(22);
+        boolean isEven = naturalNumber.isEven();
+        printValues(String.format("Check Number isEven: %s", isEven));
 
         printValues("\n>>>>>>>>>>>>Generic Methods & Bounded Type Parameters<<<<<<<<<<<<<\n");
 

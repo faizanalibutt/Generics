@@ -1,6 +1,6 @@
 package com.hazel.fiazi.coding;
 
-interface Comparable<N> {
-    N CompareToDo(N number);
-    int compareTo(N number);
+interface Comparable<T> {
+    T CompareToDo(T number);
+    int compareTo(T number);
 }
