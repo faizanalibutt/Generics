@@ -1,12 +1,34 @@
 package com.hazel.fiazi.coding;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 class GenericUtils<T> implements Comparable<T> {
 
-    static <K, V> boolean compare(Pair<K, V> p1, Pair<K, V> p2) {
+    /*
+     * GENERIC METHODS with a simple implementation to log anything you want to
+     * muje chorh doh <3
+     * */
+    static <M> void printValues(M message) {
+        System.out.println(message);
+    }
+
+    /*
+    * GENERIC METHODS with multiple TYPE PARAMETERS
+    * Apko maza aye ga bohut maza aye ga
+    * */
+    static <K, V> boolean compare(Pair<K, V> p1, Pair<K, V> p2)
+    {
         return p1.getKey().equals(p2.getKey()) && p1.getValue().equals(p2.getValue());
     }
 
-    public static <T extends Comparable<T>> int countGreaterThan(T[] anyArray, T element) {
+    /*
+    * GENERIC BOUNDED TYPE + GENERIC METHODS
+    * >-- basically just to comapre any values with primitive data types.
+    * gabrana nahe hi :D
+    * */
+    public static <T extends Comparable<T>> int countGreaterThan(T[] anyArray, T element)
+    {
         int count = 0;
         for (T value: anyArray) {
             if (value.compareTo(element) > 0)
@@ -15,13 +37,41 @@ class GenericUtils<T> implements Comparable<T> {
         return count;
     }
 
-    @Override
-    public int compareTo(T number, boolean isHandle) {
-        return 0;
+    /*
+    * TYPE INFERENCE keep it simple. its just an ALGORITHM that tells which type you are going to specify closest one.
+    * kia karun cherh gye hi :P
+    * */
+    static <T> T pick(T a1, T a2) { return a2; }
+    Serializable s = pick("d", new ArrayList<String>());
+    Serializable s1 = pick("s", new ArrayList<Integer>());
+
+    /*
+    * TYPE INFERENCE AND GENERIC METHODS
+    * Type inference is going to set things in a list.
+    * Teeka lag gia hi. bhai :(
+    * */
+    public static <T> void addBox(T t, java.util.List<FaiziGeneric<T>> boxesList)
+    {
+        FaiziGeneric<T> boxObj = new FaiziGeneric<>();
+        boxObj.add(t);
+        boxesList.add(boxObj);
+    }
+    /* to be continued... >V<
+    * loop through things added.
+    *  */
+    public static <T> void outPutBoxex(java.util.List<FaiziGeneric<T>> outputBoxesList)
+    {
+        int counterValue = 0;
+        for (FaiziGeneric<T> value: outputBoxesList) {
+            T boxContents = value.get();
+            System.out.println(String.format("Box #: %s contains [%s]", counterValue, boxContents));
+            counterValue+=1;
+        }
     }
 
     @Override
-    public int compareTo(T o) {
+    public int compareTo(T o)
+    {
         return 0;
     }
 }

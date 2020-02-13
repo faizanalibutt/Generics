@@ -4,24 +4,26 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.hazel.fiazi.coding.GenericUtils.printValues;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        MyGeneric<Integer> myGeneric = new MyGeneric<>();
+        FaiziGeneric<Integer> faiziGeneric = new FaiziGeneric<>();
 
         printValues("\nApplying generics to INT\n");
 
-        myGeneric.add(3);
-        printValues(myGeneric.get());
-        myGeneric.add(23);
-        printValues(myGeneric.get());
+        faiziGeneric.add(3);
+        printValues(faiziGeneric.get());
+        faiziGeneric.add(23);
+        printValues(faiziGeneric.get());
         Integer[] integersArray = {10, 20, 30, 40, 50};
-        myGeneric.printGenericArray(integersArray);
+        faiziGeneric.printGenericArray(integersArray);
 
         printValues("\nApplying generics to CHARACTER\n");
         Character[] charactersArray = {'Y', 'F', 'A', 'S', 'I', 'R', 'Z', 'N'};
-        myGeneric.printGenericArray(charactersArray);
+        faiziGeneric.printGenericArray(charactersArray);
 
         printValues("\nMultiple Type Parameters\n");
 
@@ -32,7 +34,7 @@ public class Main {
         boolean same = GenericUtils.<String, Integer>compare(pair1, pair2); /*its understood but sometimes it isn't while dealing with legacy code*/
         boolean adjacent = GenericUtils.compare(pair1, pair2);
         printValues(String.format("Generic Compare Value is: %s", adjacent));
-        Pairs<String, MyGeneric<Integer>> orderedPair = new Pairs<>("MyGeneric", myGeneric);
+        Pairs<String, FaiziGeneric<Integer>> orderedPair = new Pairs<>("MyGeneric", faiziGeneric);
         printValues(String.format("MyGeneric Parameter Information is: Value: %s, Key: %s", orderedPair.getKey(), orderedPair.getValue()));
 
         printValues("\n>>>>>>>>>>>>Bounded Type Parameters<<<<<<<<<<<<<\n");
@@ -46,15 +48,23 @@ public class Main {
         int value = GenericUtils.countGreaterThan(integersArray, 60);
         printValues(String.format("Check given Number isGreater: %s", value));
 
+        printValues("\n>>>>>>>>>>>>TYPE INFERENCE & GENERIC METHODS<<<<<<<<<<<<<\n");
+        List<FaiziGeneric<Integer>> integerBoxesList = new ArrayList<>(); // btw you can use ArrayList if you want to or LinkedList
+        GenericUtils.addBox(10, integerBoxesList);
+        GenericUtils.addBox(20, integerBoxesList);
+        // you can specify the type but JVM infers auto what type of argument is.
+        GenericUtils.<Integer>addBox(100, integerBoxesList);
+        GenericUtils.outPutBoxex(integerBoxesList);
+
         printValues("\n>>>>>>>>>>>>Wildcard Entering<<<<<<<<<<<<<\n");
 
         printValues("\nSimple WildCard\n");
         List<Rectangle> rectangleList = new ArrayList<>();
         rectangleList.add(new Rectangle());
-        myGeneric.drawShapes(rectangleList);
+        faiziGeneric.drawShapes(rectangleList);
         List<Circle> circleList = new ArrayList<>();
         circleList.add(new Circle());
-        myGeneric.drawShapes(circleList);
+        faiziGeneric.drawShapes(circleList);
 
         // homework make 2 one of hashmap generated second simple lists of char integer double float
 
@@ -89,10 +99,6 @@ public class Main {
         printValues("Displaying The Number Values");
         WildCardTypes.lowerBoundWildCardAdd(numberList);
 
-    }
-
-    static <E> void printValues(E message) {
-        System.out.println(message);
     }
 
 }
