@@ -1,6 +1,6 @@
 package com.hazel.fiazi.coding;
 
-class GenericUtils {
+class GenericUtils<T> implements Comparable<T> {
 
     static <K, V> boolean compare(Pair<K, V> p1, Pair<K, V> p2) {
         return p1.getKey().equals(p2.getKey()) && p1.getValue().equals(p2.getValue());
@@ -26,6 +26,11 @@ class GenericUtils {
                 ++count;
         }
         return count;
+    }
+
+    @Override
+    public int compareTo(T number) {
+        return 0;
     }
 
 }

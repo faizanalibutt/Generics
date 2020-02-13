@@ -43,7 +43,7 @@ public class Main {
 
         printValues("\n>>>>>>>>>>>>Generic Methods & Bounded Type Parameters<<<<<<<<<<<<<\n");
 
-        int value = GenericUtils.countGreaterThan(integersArray, 10);
+        int value = GenericUtils.countGreaterThan(integersArray, 60);
         printValues(String.format("Check given Number isGreater: %s", value));
 
         printValues("\n>>>>>>>>>>>>Wildcard Entering<<<<<<<<<<<<<\n");
