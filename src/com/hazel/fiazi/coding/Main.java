@@ -13,7 +13,6 @@ public class Main {
         FaiziGeneric<Integer> faiziGeneric = new FaiziGeneric<>();
 
         printValues("\nApplying generics to INT\n");
-
         faiziGeneric.add(3);
         printValues(faiziGeneric.get());
         faiziGeneric.add(23);
@@ -25,7 +24,7 @@ public class Main {
         Character[] charactersArray = {'Y', 'F', 'A', 'S', 'I', 'R', 'Z', 'N'};
         faiziGeneric.printGenericArray(charactersArray);
 
-        printValues("\nMultiple Type Parameters\n");
+        printValues("\n>>>>>>>>>>>>Multiple Type Parameters<<<<<<<<<<<<<\n");
 
         Pair<String, Integer> pair1 = new Pairs<>("Faizi", 23);
         Pair<String, Integer> pair2 = new Pairs<>("Uzi", 1);
@@ -33,7 +32,7 @@ public class Main {
         printValues(String.format("Pair2 Information is: Value: %s, Key: %d", pair2.getKey(), pair2.getValue()));
         boolean same = GenericUtils.<String, Integer>compare(pair1, pair2); /*its understood but sometimes it isn't while dealing with legacy code*/
         boolean adjacent = GenericUtils.compare(pair1, pair2);
-        printValues(String.format("Generic Compare Value is: %s", adjacent));
+        printValues(String.format(" 'Parametrized TYPES INFERRING' Generic Compare Value is: %s", adjacent));
         Pairs<String, FaiziGeneric<Integer>> orderedPair = new Pairs<>("MyGeneric", faiziGeneric);
         printValues(String.format("MyGeneric Parameter Information is: Value: %s, Key: %s", orderedPair.getKey(), orderedPair.getValue()));
 
@@ -48,6 +47,8 @@ public class Main {
         int value = GenericUtils.countGreaterThan(integersArray, 60);
         printValues(String.format("Check given Number isGreater: %s", value));
 
+        printValues("\n>>>>>>>>>>>>TYPE INFERENCE<<<<<<<<<<<<<\n");
+
         printValues("\n>>>>>>>>>>>>TYPE INFERENCE & GENERIC METHODS<<<<<<<<<<<<<\n");
         List<FaiziGeneric<Integer>> integerBoxesList = new ArrayList<>(); // btw you can use ArrayList if you want to or LinkedList
         GenericUtils.addBox(10, integerBoxesList);
@@ -56,9 +57,11 @@ public class Main {
         GenericUtils.<Integer>addBox(100, integerBoxesList);
         GenericUtils.outPutBoxex(integerBoxesList);
 
+        printValues("\n>>>>>>>>>>>>TYPE INFERENCE & GENERIC CLASSES<<<<<<<<<<<<<\n");
+
         printValues("\n>>>>>>>>>>>>Wildcard Entering<<<<<<<<<<<<<\n");
 
-        printValues("\nSimple WildCard\n");
+        printValues("\n>>>>>>>>>>>>Simple Wildcard<<<<<<<<<<<<<\n");
         List<Rectangle> rectangleList = new ArrayList<>();
         rectangleList.add(new Rectangle());
         faiziGeneric.drawShapes(rectangleList);
@@ -68,7 +71,7 @@ public class Main {
 
         // homework make 2 one of hashmap generated second simple lists of char integer double float
 
-        printValues("\nUpper Bound WildCard WildCard\n");
+        printValues("\n>>>>>>>>>>>>Upper Bound WildCard WildCard<<<<<<<<<<<<<\n");
 
         ArrayList<Double> doubleList = new ArrayList<>();
         doubleList.add(10.0);
@@ -80,7 +83,7 @@ public class Main {
         integerList.add(3);
         printValues(String.format("displaying sum of doubleList after converting: %s", WildCardTypes.upperBoundWildCardAdd(integerList)));
 
-        printValues("\nBound WildCard\n");
+        printValues("\n>>>>>>>>>>>>Bound WildCard<<<<<<<<<<<<<\n");
 
         List<Integer> intList = Arrays.asList(1,2,3);
         printValues("Displaying the Integer Values");
@@ -90,7 +93,7 @@ public class Main {
         printValues("Displaying the String Values");
         WildCardTypes.mBoundWildCardDisplay(stringList);
 
-        printValues("\nLower Bound WildCard\n");
+        printValues("\n>>>>>>>>>>>>Lower Bound WildCard<<<<<<<<<<<<<\n");
 
         printValues("Displaying the Integer Values");
         WildCardTypes.lowerBoundWildCardAdd(intList);
