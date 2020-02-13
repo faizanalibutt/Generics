@@ -6,19 +6,6 @@ class GenericUtils<T> implements Comparable<T> {
         return p1.getKey().equals(p2.getKey()) && p1.getValue().equals(p2.getValue());
     }
 
-    public static <N extends Comparable<N>> N countinGreaterThan(N[] anyArray, N element) {
-
-        N object = null;
-
-        for (N value: anyArray) {
-            /*if(value.CompareTo(element) > )
-                return object;*/
-        }
-
-        return null;
-
-    }
-
     public static <T extends Comparable<T>> int countGreaterThan(T[] anyArray, T element) {
         int count = 0;
         for (T value: anyArray) {
@@ -29,8 +16,12 @@ class GenericUtils<T> implements Comparable<T> {
     }
 
     @Override
-    public int compareTo(T number) {
+    public int compareTo(T number, boolean isHandle) {
         return 0;
     }
 
+    @Override
+    public int compareTo(T o) {
+        return 0;
+    }
 }
