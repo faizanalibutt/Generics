@@ -85,11 +85,11 @@ public class Main {
 
         List<Integer> intList = Arrays.asList(1,2,3);
         printValues("Displaying the Integer Values");
-        WildCardUtils.mBoundWildCardDisplay(intList);
+        WildCardUtils.mUnBoundWildCardDisplay(intList);
 
         List<String> stringList = Arrays.asList("one", "two", "three");
         printValues("Displaying the String Values");
-        WildCardUtils.mBoundWildCardDisplay(stringList);
+        WildCardUtils.mUnBoundWildCardDisplay(stringList);
 
         printValues("\n>>>>>>>>>>>>Lower Bound WildCard<<<<<<<<<<<<<\n");
 
