@@ -1,4 +1,4 @@
-package com.ali.fiazi.coding;
+package com.ali.faizan.coding;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ class GenericUtils<T> {
     /**
      * GENERIC METHODS with a simple implementation to log anything you want to
      * here <M> is custom type of function or parameter that's came before return type
-     * muje chorh doh <3
+     * muje chorh doh rabia <3
      */
     static <M> void printValues(M message) {
         System.out.println(message);
@@ -68,6 +68,7 @@ class GenericUtils<T> {
     }
     /* to be continued... >V<
     * loop through things added.
+    * hoorein nazer arahe hain
     *  */
     public static <T> void outPutBoxex(java.util.List<FaiziGeneric<T>> outputBoxesList)
     {

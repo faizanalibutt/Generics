@@ -1,4 +1,4 @@
-package com.ali.fiazi.coding;
+package com.ali.faizan.coding;
 
 interface Pair<K, V> {
     K getKey();

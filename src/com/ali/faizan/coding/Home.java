@@ -1,4 +1,4 @@
-package com.ali.fiazi.coding;
+package com.ali.faizan.coding;
 
 import java.util.HashMap;
 import java.util.Map;

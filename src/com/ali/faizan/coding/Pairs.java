@@ -1,4 +1,4 @@
-package com.ali.fiazi.coding;
+package com.ali.faizan.coding;
 
 class Pairs<K, V> implements Pair<K, V> {
 

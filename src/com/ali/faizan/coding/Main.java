@@ -1,10 +1,10 @@
-package com.ali.fiazi.coding;
+package com.ali.faizan.coding;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.ali.fiazi.coding.GenericUtils.printValues;
+import static com.ali.faizan.coding.GenericUtils.printValues;
 
 public class Main {
 
