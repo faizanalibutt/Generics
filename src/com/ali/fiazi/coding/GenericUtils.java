@@ -1,16 +1,26 @@
-package com.hazel.fiazi.coding;
+package com.ali.fiazi.coding;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-class GenericUtils<T> implements Comparable<T> {
+class GenericUtils<T> {
 
-    /*
+    /**
      * GENERIC METHODS with a simple implementation to log anything you want to
+     * here <M> is custom type of function or parameter that's came before return type
      * muje chorh doh <3
-     * */
+     */
     static <M> void printValues(M message) {
         System.out.println(message);
+    }
+
+    /*
+    * Exploring Array Values and iterate through them
+    * */
+    static <E> void printGenericArray(E[] elements)
+    {
+        for (E element : elements)
+            GenericUtils.printValues(String.format("Generic Array Values Are: %s", element));
     }
 
     /*
@@ -69,9 +79,4 @@ class GenericUtils<T> implements Comparable<T> {
         }
     }
 
-    @Override
-    public int compareTo(T o)
-    {
-        return 0;
-    }
 }

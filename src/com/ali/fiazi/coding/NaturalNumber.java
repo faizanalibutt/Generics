@@ -1,4 +1,4 @@
-package com.hazel.fiazi.coding;
+package com.ali.fiazi.coding;
 
 class NaturalNumber<N extends Integer>
 {

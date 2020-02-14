@@ -1,10 +1,17 @@
-package com.hazel.fiazi.coding;
+package com.ali.fiazi.coding;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class WildCardTypes
+class WildCardUtils
 {
+    static void sipleWildcardrawShapes(List<? extends AbstractShape> shapeList)
+    {
+        for (AbstractShape shape : shapeList) {
+            shape.draw();
+        }
+    }
+
     static Double upperBoundWildCardAdd(ArrayList<? extends Number> numberList)
     {
         double sumDouble = 0.0;

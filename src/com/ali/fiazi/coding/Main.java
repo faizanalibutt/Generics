@@ -1,10 +1,10 @@
-package com.hazel.fiazi.coding;
+package com.ali.fiazi.coding;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.hazel.fiazi.coding.GenericUtils.printValues;
+import static com.ali.fiazi.coding.GenericUtils.printValues;
 
 public class Main {
 
@@ -18,11 +18,11 @@ public class Main {
         faiziGeneric.add(23);
         printValues(faiziGeneric.get());
         Integer[] integersArray = {10, 20, 30, 40, 50};
-        faiziGeneric.printGenericArray(integersArray);
+        GenericUtils.printGenericArray(integersArray);
 
         printValues("\nApplying generics to CHARACTER\n");
         Character[] charactersArray = {'Y', 'F', 'A', 'S', 'I', 'R', 'Z', 'N'};
-        faiziGeneric.printGenericArray(charactersArray);
+        GenericUtils.printGenericArray(charactersArray);
 
         printValues("\n>>>>>>>>>>>>Multiple Type Parameters<<<<<<<<<<<<<\n");
 
@@ -44,12 +44,12 @@ public class Main {
 
         printValues("\n>>>>>>>>>>>>Generic Methods & Bounded Type Parameters<<<<<<<<<<<<<\n");
 
-        int value = GenericUtils.countGreaterThan(integersArray, 60);
+        int value = GenericUtils.countGreaterThan(integersArray, 40);
         printValues(String.format("Check given Number isGreater: %s", value));
 
         printValues("\n>>>>>>>>>>>>TYPE INFERENCE<<<<<<<<<<<<<\n");
 
-        printValues("\n>>>>>>>>>>>>TYPE INFERENCE & GENERIC METHODS<<<<<<<<<<<<<\n");
+        printValues("\n>>>>>>>>>>>>TYPE INFERENCE & GENERIC METHODS, GENERIC CLASSES<<<<<<<<<<<<<\n");
         List<FaiziGeneric<Integer>> integerBoxesList = new ArrayList<>(); // btw you can use ArrayList if you want to or LinkedList
         GenericUtils.addBox(10, integerBoxesList);
         GenericUtils.addBox(20, integerBoxesList);
@@ -57,17 +57,15 @@ public class Main {
         GenericUtils.<Integer>addBox(100, integerBoxesList);
         GenericUtils.outPutBoxex(integerBoxesList);
 
-        printValues("\n>>>>>>>>>>>>TYPE INFERENCE & GENERIC CLASSES<<<<<<<<<<<<<\n");
-
-        printValues("\n>>>>>>>>>>>>Wildcard Entering<<<<<<<<<<<<<\n");
+        printValues("\n>>>>>>>>>>>>Wildcard Entering BIG >- SHOW<<<<<<<<<<<<<\n");
 
         printValues("\n>>>>>>>>>>>>Simple Wildcard<<<<<<<<<<<<<\n");
         List<Rectangle> rectangleList = new ArrayList<>();
         rectangleList.add(new Rectangle());
-        faiziGeneric.drawShapes(rectangleList);
+        WildCardUtils.sipleWildcardrawShapes(rectangleList);
         List<Circle> circleList = new ArrayList<>();
         circleList.add(new Circle());
-        faiziGeneric.drawShapes(circleList);
+        WildCardUtils.sipleWildcardrawShapes(circleList);
 
         // homework make 2 one of hashmap generated second simple lists of char integer double float
 
@@ -76,31 +74,31 @@ public class Main {
         ArrayList<Double> doubleList = new ArrayList<>();
         doubleList.add(10.0);
         doubleList.add(20.0);
-        printValues(String.format("displaying sum of doubleList: %s", WildCardTypes.upperBoundWildCardAdd(doubleList)));
+        printValues(String.format("displaying sum of doubleList: %s", WildCardUtils.upperBoundWildCardAdd(doubleList)));
 
         ArrayList<Integer> integerList = new ArrayList<>();
         integerList.add(1);
         integerList.add(3);
-        printValues(String.format("displaying sum of doubleList after converting: %s", WildCardTypes.upperBoundWildCardAdd(integerList)));
+        printValues(String.format("displaying sum of doubleList after converting: %s", WildCardUtils.upperBoundWildCardAdd(integerList)));
 
         printValues("\n>>>>>>>>>>>>Bound WildCard<<<<<<<<<<<<<\n");
 
         List<Integer> intList = Arrays.asList(1,2,3);
         printValues("Displaying the Integer Values");
-        WildCardTypes.mBoundWildCardDisplay(intList);
+        WildCardUtils.mBoundWildCardDisplay(intList);
 
         List<String> stringList = Arrays.asList("one", "two", "three");
         printValues("Displaying the String Values");
-        WildCardTypes.mBoundWildCardDisplay(stringList);
+        WildCardUtils.mBoundWildCardDisplay(stringList);
 
         printValues("\n>>>>>>>>>>>>Lower Bound WildCard<<<<<<<<<<<<<\n");
 
         printValues("Displaying the Integer Values");
-        WildCardTypes.lowerBoundWildCardAdd(intList);
+        WildCardUtils.lowerBoundWildCardAdd(intList);
 
         List<Number> numberList = Arrays.asList(1.0, 2.0, 3.0);
         printValues("Displaying The Number Values");
-        WildCardTypes.lowerBoundWildCardAdd(numberList);
+        WildCardUtils.lowerBoundWildCardAdd(numberList);
 
     }
 
