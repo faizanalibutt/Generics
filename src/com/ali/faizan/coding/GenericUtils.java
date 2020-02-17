@@ -1,7 +1,9 @@
 package com.ali.faizan.coding;
 
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.List;
 
 class GenericUtils<T> {
 
@@ -25,6 +27,8 @@ class GenericUtils<T> {
 
     /*
     * GENERIC METHODS with multiple TYPE PARAMETERS
+    * here we have type parameters in function you can make a class with multiple type parameters
+    * for instance see this class {@link com.ali.faizan.coding.Pairs}
     * Apko maza aye ga bohut maza aye ga
     * */
     static <K, V> boolean compare(Pair<K, V> p1, Pair<K, V> p2)
@@ -78,6 +82,23 @@ class GenericUtils<T> {
             System.out.println(String.format("Box #: %s contains [%s]", counterValue, boxContents));
             counterValue+=1;
         }
+    }
+
+    /**
+     * @param instanceList to save list of E type
+     * @param instance to instantiate any type of primitive or other
+     * <pre>
+     *       out of the java world things
+     *       what do you think programming does have SPACE haha
+     * </pre>
+     * sarkari nokri ka koi faida nahe hi kharab ho jao gye. lmfao
+     * */
+    @SuppressWarnings("SameParameterValue")
+    static <E> void appendGenericValue(List<E> instanceList, Class<E> instance)
+            throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
+        E elementInstance = instance.getDeclaredConstructor().newInstance();
+        instanceList.add(elementInstance);
+        printValues(String.format("Newly created instance is: %s", elementInstance));
     }
 
 }

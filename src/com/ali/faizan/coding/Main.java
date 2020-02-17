@@ -1,5 +1,6 @@
 package com.ali.faizan.coding;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -47,7 +48,7 @@ public class Main {
         int value = GenericUtils.countGreaterThan(integersArray, 40);
         printValues(String.format("Check given Number isGreater: %s", value));
 
-        printValues("\n>>>>>>>>>>>>TYPE INFERENCE<<<<<<<<<<<<<\n");
+        printValues("\n\n>>>>>>>>>>>>TYPE INFERENCE<<<<<<<<<<<<<\n");
 
         printValues("\n>>>>>>>>>>>>TYPE INFERENCE & GENERIC METHODS, GENERIC CLASSES<<<<<<<<<<<<<\n");
         List<FaiziGeneric<Integer>> integerBoxesList = new ArrayList<>(); // btw you can use ArrayList if you want to or LinkedList
@@ -57,15 +58,15 @@ public class Main {
         GenericUtils.<Integer>addBox(100, integerBoxesList);
         GenericUtils.outPutBoxex(integerBoxesList);
 
-        printValues("\n>>>>>>>>>>>>Wildcard Entering BIG >- SHOW<<<<<<<<<<<<<\n");
+        printValues("\n\n>>>>>>>>>>>>Wildcard Entering BIG >- SHOW<<<<<<<<<<<<<\n");
 
         printValues("\n>>>>>>>>>>>>Simple Wildcard<<<<<<<<<<<<<\n");
         List<Rectangle> rectangleList = new ArrayList<>();
         rectangleList.add(new Rectangle());
-        WildCardUtils.sipleWildcardrawShapes(rectangleList);
+        WildCardUtils.simpleWildCarDrawShapes(rectangleList);
         List<Circle> circleList = new ArrayList<>();
         circleList.add(new Circle());
-        WildCardUtils.sipleWildcardrawShapes(circleList);
+        WildCardUtils.simpleWildCarDrawShapes(circleList);
 
         // homework make 2 one of hashmap generated second simple lists of char integer double float
 
@@ -99,6 +100,29 @@ public class Main {
         List<Number> numberList = Arrays.asList(1.0, 2.0, 3.0);
         printValues("Displaying The Number Values");
         WildCardUtils.lowerBoundWildCardAdd(numberList);
+
+        printValues("\n\n>>>>>>>>>>>>TYPE ENSURE<<<<<<<<<<<<<\n");
+
+        FaiziGeneric<Integer> typeErasure = new TypeErasure(2);
+        printValues(String.format("Type Erasure Value is: %s", typeErasure.get()));
+
+        printValues("\n\n>>>>>>>>>>>>RESTRICTIONS ON GENERICS<<<<<<<<<<<<<\n");
+
+        printValues("\n>>>>>>>>>>>>Instance of Type Parameter<<<<<<<<<<<<<\n");
+
+        try
+        {
+            List<String> restrictedStringList = new ArrayList<>();
+            GenericUtils.appendGenericValue(restrictedStringList, String.class);
+        } catch (IllegalAccessException | InstantiationException | NoSuchMethodException | InvocationTargetException e)
+        /*you can use simple Exception Root of exceptions here btw*/
+        {
+            e.printStackTrace();
+        }
+
+        /**
+         * see here {@link https://docs.oracle.com/javase/tutorial/java/generics/restrictions.html}*/
+        printValues("FOR COMPLETE SENSE ON HOW RESTRICTIONS WORK SEE DOCS");
 
     }
 

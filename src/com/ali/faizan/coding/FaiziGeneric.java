@@ -1,7 +1,5 @@
 package com.ali.faizan.coding;
 
-import java.util.List;
-
 class FaiziGeneric<T> {
 
     /*
@@ -26,7 +24,11 @@ class FaiziGeneric<T> {
     *
     * Aey Haji hun aevein krey sayen...
     * */
-    <X> FaiziGeneric(X x) {}
+    @SuppressWarnings("unchecked")
+    <E> FaiziGeneric(E element)
+    {
+        this.mGenericObject = (T) element;
+    }
 
     void add(T mGenericParameterObject)
     {
