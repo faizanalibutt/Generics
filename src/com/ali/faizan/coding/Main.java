@@ -7,9 +7,14 @@ import java.util.List;
 
 import static com.ali.faizan.coding.GenericUtils.printValues;
 
-public class Main {
+public class Main
+{
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
+
+        printValues("\n\n>>>>>>>>>>>>GENERICS<<<<<<<<<<<<<\n\n");
+        printValues("Generics add stability to your code by making more of your bugs detectable at compile time.");
 
         FaiziGeneric<Integer> faiziGeneric = new FaiziGeneric<>();
 
@@ -103,7 +108,7 @@ public class Main {
 
         printValues("\n\n>>>>>>>>>>>>TYPE ENSURE<<<<<<<<<<<<<\n");
 
-        FaiziGeneric<Integer> typeErasure = new TypeErasure(2);
+        FaiziGeneric<Integer> typeErasure = new TypeErasure(23);
         printValues(String.format("Type Erasure Value is: %s", typeErasure.get()));
 
         printValues("\n\n>>>>>>>>>>>>RESTRICTIONS ON GENERICS<<<<<<<<<<<<<\n");
@@ -120,8 +125,9 @@ public class Main {
             e.printStackTrace();
         }
 
-        /**
-         * see here {@link https://docs.oracle.com/javase/tutorial/java/generics/restrictions.html}*/
+        /*
+         * see here {@link https://docs.oracle.com/javase/tutorial/java/generics/restrictions.html}
+         * */
         printValues("FOR COMPLETE SENSE ON HOW RESTRICTIONS WORK SEE DOCS");
 
     }

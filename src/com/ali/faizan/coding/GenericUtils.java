@@ -5,11 +5,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-class GenericUtils<T> {
+class GenericUtils
+{
 
     /**
      * GENERIC METHODS with a simple implementation to log anything you want to
-     * here <M> is custom type of function or parameter that's came before return type
+     * here <M> is custom type of function or parameter that's came before return type, its a type parameter section
      * muje chorh doh rabia <3
      */
     static <M> void printValues(M message) {
@@ -25,7 +26,7 @@ class GenericUtils<T> {
             GenericUtils.printValues(String.format("Generic Array Values Are: %s", element));
     }
 
-    /*
+    /**
     * GENERIC METHODS with multiple TYPE PARAMETERS
     * here we have type parameters in function you can make a class with multiple type parameters
     * for instance see this class {@link com.ali.faizan.coding.Pairs}
@@ -36,9 +37,10 @@ class GenericUtils<T> {
         return p1.getKey().equals(p2.getKey()) && p1.getValue().equals(p2.getValue());
     }
 
-    /*
+    /**
     * GENERIC BOUNDED TYPE + GENERIC METHODS
-    * >-- basically just to comapre any values with primitive data types.
+    * >-- basically just to comapre any object values with primitive data types.
+    * <p>use a type parameter bounded by the Comparable<T> interface to fix primitive problem</p>
     * gabrana nahe hi :D
     * */
     public static <T extends Comparable<T>> int countGreaterThan(T[] anyArray, T element)

@@ -1,9 +1,14 @@
 package com.ali.faizan.coding;
 
-class FaiziGeneric<T> {
+/**
+ * @param <T> the type of the value being Used/Boxed
+ * */
+class FaiziGeneric<T>
+{
 
     /*
     * Generic Object
+    * T stands for "Type"
     * chohtha pathar
     * */
     private T mGenericObject;
@@ -22,7 +27,7 @@ class FaiziGeneric<T> {
     * e.g you can have String type of Class with the argument specified as boolean
     * new FaiziGeneric<String>(false) here String refers to T of FaiziGeneric<T> and false refers to <X>
     *
-    * Aey Haji hun aevein krey sayen...
+    * Aey HAJI hun aevein krey sayen...
     * */
     @SuppressWarnings("unchecked")
     <E> FaiziGeneric(E element)

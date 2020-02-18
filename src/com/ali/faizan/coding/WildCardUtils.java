@@ -5,12 +5,10 @@ import java.util.List;
 
 class WildCardUtils
 {
-    /*
+    /**
      * if you are interested in knowing more about Comments you can start from here
      * ctrl click here at Integer {@link java.lang.Integer}
-     * */
-
-    /**
+     *
      * UPPER BOUND WILDCARD
      * <p>
      *     <? extends Foo> Here "?" is WildCard "extends" is keyword also "implements" is usable here "Foo" is Upper Bound
@@ -74,6 +72,7 @@ class WildCardUtils
     /**
      * if you run this statement directly it will get error work around is like this function for this code
      * listInfo.set(0, listInfo.get(0));
+     * police dah lakar dah sohthah
      * */
     static <T> void fooHelper(List<T> listInfo) {
         listInfo.set(0, listInfo.get(0));
