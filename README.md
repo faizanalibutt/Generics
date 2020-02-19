@@ -1,1 +1,1 @@
-# Generics A project to understand how Generics Work and how one can use it.
+# Generics A project to understand How Generics Work and One can use it.
