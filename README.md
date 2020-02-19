@@ -1,1 +1,1 @@
-# Generics A project to understand How Generics Work and One can use it.
+# Generics A project to understand How Generics Work in Java and One can use it.
