@@ -2,6 +2,7 @@ package com.ali.faizan.coding.utils;
 
 import com.ali.faizan.coding.app.FaiziGeneric;
 import com.ali.faizan.coding.callback.Pair;
+import com.ali.faizan.coding.model.Pairs;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
