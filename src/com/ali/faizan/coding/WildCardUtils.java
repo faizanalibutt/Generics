@@ -11,7 +11,10 @@ class WildCardUtils
      *
      * UPPER BOUND WILDCARD
      * <p>
-     *     <? extends Foo> Here "?" is WildCard "extends" is keyword also "implements" is usable here "Foo" is Upper Bound
+     *     <? extends Foo> Here "?" is UNKNOWN WildCard "extends" is keyword also "implements" is usable here
+     *                     "Foo" is Upper Bound
+     *     <? super T> Here "?" is UNKNOWN TYPE OF WILDCARD "super" denotes Parent, Base, Master class here
+     *                 "T" Lower Bound of T type (T could be anything Person, Human, Object, Foo)
      * </p>
      * @param shapeList it is a list of types from Upper Bound
      * kuri menu kehndi neeche daikho >V<
@@ -51,6 +54,10 @@ class WildCardUtils
 
     /**
      * LOWER BOUNDED WILDCARD
+     * <p>
+     *     <? super T> Here "?" is UNKNOWN TYPE OF WILDCARD "super" denotes Parent, Base, Master class here
+     *                 "T" Lower Bound of T type (T could be anything Person, Human, Object, Foo)
+     * </p>
      * @param numberList one can iterate through Integers list also super types of it like Number, Object
      * upper daikho >^<
      * */
@@ -72,7 +79,7 @@ class WildCardUtils
     /**
      * if you run this statement directly it will get error work around is like this function for this code
      * listInfo.set(0, listInfo.get(0));
-     * police dah lakar dah sohthah
+     * lakar dah sohthah grees alah
      * */
     static <T> void fooHelper(List<T> listInfo) {
         listInfo.set(0, listInfo.get(0));

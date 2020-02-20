@@ -87,7 +87,7 @@ public class Main
         integerList.add(3);
         printValues(String.format("displaying sum of doubleList after converting: %s", WildCardUtils.upperBoundWildCardAdd(integerList)));
 
-        printValues("\n>>>>>>>>>>>>Bound WildCard<<<<<<<<<<<<<\n");
+        printValues("\n>>>>>>>>>>>>UnBound WildCard<<<<<<<<<<<<<\n");
 
         List<Integer> intList = Arrays.asList(1,2,3);
         printValues("Displaying the Integer Values");
@@ -103,7 +103,7 @@ public class Main
         WildCardUtils.lowerBoundWildCardAdd(intList);
 
         List<Number> numberList = Arrays.asList(1.0, 2.0, 3.0);
-        printValues("Displaying The Number Values");
+        printValues("Displaying The Number Values of Double type");
         WildCardUtils.lowerBoundWildCardAdd(numberList);
 
         printValues("\n\n>>>>>>>>>>>>TYPE ENSURE<<<<<<<<<<<<<\n");
