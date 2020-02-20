@@ -1,9 +1,9 @@
-package com.ali.faizan.coding;
+package com.ali.faizan.coding.app;
 
 /**
  * @param <T> the type of the value being Used/Boxed
  * */
-class FaiziGeneric<T>
+public class FaiziGeneric<T>
 {
 
     /*
@@ -17,7 +17,7 @@ class FaiziGeneric<T>
     * No Argument Generic Constructor
     * tadke nal
     * */
-    FaiziGeneric() {}
+    public FaiziGeneric() {}
 
     /*
     * TYPE INFERENCE & GENERIC CONSTRUCTORS
@@ -30,17 +30,17 @@ class FaiziGeneric<T>
     * Aey HAJI hun aevein krey sayen...
     * */
     @SuppressWarnings("unchecked")
-    <E> FaiziGeneric(E element)
+    public <E> FaiziGeneric(E element)
     {
         this.mGenericObject = (T) element;
     }
 
-    void add(T mGenericParameterObject)
+    public void add(T mGenericParameterObject)
     {
         this.mGenericObject = mGenericParameterObject;
     }
 
-    T get() {
+    public T get() {
         return mGenericObject;
     }
 

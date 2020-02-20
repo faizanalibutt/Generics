@@ -1,11 +1,14 @@
-package com.ali.faizan.coding;
+package com.ali.faizan.coding.utils;
+
+import com.ali.faizan.coding.app.FaiziGeneric;
+import com.ali.faizan.coding.callback.Pair;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-class GenericUtils
+public class GenericUtils
 {
 
     /**
@@ -13,14 +16,14 @@ class GenericUtils
      * here <M> is custom type of function or parameter that's came before return type, its a type parameter section
      * muje chorh doh rabia <3
      */
-    static <M> void printValues(M message) {
+    public static <M> void printValues(M message) {
         System.out.println(message);
     }
 
     /*
     * Exploring Array Values and iterate through them
     * */
-    static <E> void printGenericArray(E[] elements)
+    public static <E> void printGenericArray(E[] elements)
     {
         for (E element : elements)
             GenericUtils.printValues(String.format("Generic Array Values Are: %s", element));
@@ -29,10 +32,10 @@ class GenericUtils
     /**
     * GENERIC METHODS with multiple TYPE PARAMETERS
     * here we have type parameters in function you can make a class with multiple type parameters
-    * for instance see this class {@link com.ali.faizan.coding.Pairs}
+    * for instance see this class {@link Pairs}
     * Apko maza aye ga bohut maza aye ga
     * */
-    static <K, V> boolean compare(Pair<K, V> p1, Pair<K, V> p2)
+    public static <K, V> boolean compare(Pair<K, V> p1, Pair<K, V> p2)
     {
         return p1.getKey().equals(p2.getKey()) && p1.getValue().equals(p2.getValue());
     }
@@ -57,7 +60,7 @@ class GenericUtils
     * TYPE INFERENCE keep it simple. its just an ALGORITHM that tells which type you are going to specify closest one.
     * kia karun cherh gye hi :P
     * */
-    static <T> T pick(T a1, T a2) { return a2; }
+    public static <T> T pick(T a1, T a2) { return a2; }
     Serializable s = pick("d", new ArrayList<String>());
     Serializable s1 = pick("s", new ArrayList<Integer>());
 
@@ -96,7 +99,7 @@ class GenericUtils
      * sarkari nokri ka koi faida nahe hi kharab ho jao gye. lmfao
      * */
     @SuppressWarnings("SameParameterValue")
-    static <E> void appendGenericValue(List<E> instanceList, Class<E> instance)
+    public static <E> void appendGenericValue(List<E> instanceList, Class<E> instance)
             throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
         E elementInstance = instance.getDeclaredConstructor().newInstance();
         instanceList.add(elementInstance);

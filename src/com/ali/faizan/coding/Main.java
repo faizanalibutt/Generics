@@ -1,11 +1,17 @@
 package com.ali.faizan.coding;
 
+import com.ali.faizan.coding.app.FaiziGeneric;
+import com.ali.faizan.coding.callback.Pair;
+import com.ali.faizan.coding.model.*;
+import com.ali.faizan.coding.utils.GenericUtils;
+import com.ali.faizan.coding.utils.WildCardUtils;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.ali.faizan.coding.GenericUtils.printValues;
+import static com.ali.faizan.coding.utils.GenericUtils.printValues;
 
 public class Main
 {

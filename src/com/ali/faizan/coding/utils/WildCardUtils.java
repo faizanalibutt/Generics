@@ -1,9 +1,11 @@
-package com.ali.faizan.coding;
+package com.ali.faizan.coding.utils;
+
+import com.ali.faizan.coding.app.AbstractShape;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class WildCardUtils
+public class WildCardUtils
 {
     /**
      * if you are interested in knowing more about Comments you can start from here
@@ -19,7 +21,7 @@ class WildCardUtils
      * @param shapeList it is a list of types from Upper Bound
      * kuri menu kehndi neeche daikho >V<
      * */
-    static void simpleWildCarDrawShapes(List<? extends AbstractShape> shapeList)
+    public static void simpleWildCarDrawShapes(List<? extends AbstractShape> shapeList)
     {
         for (AbstractShape shape : shapeList) {
             shape.draw();
@@ -30,7 +32,7 @@ class WildCardUtils
      * @param numberList list provided of any Number type like Integer, Float, Long, Short, Byte
      * @return it will return value in double format/type
      */
-    static Double upperBoundWildCardAdd(ArrayList<? extends Number> numberList)
+    public static Double upperBoundWildCardAdd(ArrayList<? extends Number> numberList)
     {
         double sumDouble = 0.0;
 
@@ -46,7 +48,7 @@ class WildCardUtils
      * Nah andhro nah bahron main lutti gye vich karon
      * PEECHE DAIKHO PEECHE
      * */
-    static void mUnBoundWildCardDisplay(List<?> anyList)
+    public static void mUnBoundWildCardDisplay(List<?> anyList)
     {
         for (Object object : anyList)
             GenericUtils.printValues(object);
@@ -61,7 +63,7 @@ class WildCardUtils
      * @param numberList one can iterate through Integers list also super types of it like Number, Object
      * upper daikho >^<
      * */
-    static void lowerBoundWildCardAdd(List<? super Integer> numberList)
+    public static void lowerBoundWildCardAdd(List<? super Integer> numberList)
     {
         for (Object object : numberList)
             GenericUtils.printValues(object);
@@ -72,7 +74,7 @@ class WildCardUtils
      * @param listInfo this list object is used to capture wildcard
      * Sub badhe jan gye :D
      * */
-    static void wildCardCaptureFoo(List<?> listInfo) {
+    public static void wildCardCaptureFoo(List<?> listInfo) {
         fooHelper(listInfo);
     }
 

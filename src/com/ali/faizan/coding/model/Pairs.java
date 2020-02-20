@@ -1,11 +1,13 @@
-package com.ali.faizan.coding;
+package com.ali.faizan.coding.model;
 
-class Pairs<K, V> implements Pair<K, V> {
+import com.ali.faizan.coding.callback.Pair;
+
+public class Pairs<K, V> implements Pair<K, V> {
 
     private K key;
     private V value;
 
-    Pairs(K key, V value) {
+    public Pairs(K key, V value) {
         this.key = key;
         this.value = value;
     }

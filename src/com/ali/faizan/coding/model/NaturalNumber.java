@@ -1,4 +1,4 @@
-package com.ali.faizan.coding;
+package com.ali.faizan.coding.model;
 
 /*
 * a type parameter can have multiple bounds, if there is a class then it will come first.
@@ -10,15 +10,15 @@ package com.ali.faizan.coding;
 * If bound A is not specified first, you get a compile-time error:
 * class D <T extends B & A & C> { anything }  // compile-time error
 * */
-class NaturalNumber<N extends Integer>
+public class NaturalNumber<N extends Integer>
 {
     private N number;
 
-    NaturalNumber(N number) {
+    public NaturalNumber(N number) {
         this.number = number;
     }
 
-    boolean isEven() {
+    public boolean isEven() {
         return number.intValue() % 2 == 0;
     }
 
